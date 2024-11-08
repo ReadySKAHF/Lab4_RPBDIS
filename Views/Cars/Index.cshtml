@@ -1,0 +1,84 @@
+﻿@model IEnumerable<App.Models.Car>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LicensePlate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearOfProduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChassisNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EngineNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfProduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChassisNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReceived)
+            </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner.FullName)
+                    </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

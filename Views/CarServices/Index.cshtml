@@ -1,0 +1,58 @@
+﻿@model IEnumerable<App.Models.CarService>
+
+@{
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mechanic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDate)
+            </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mechanic.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Service.ServiceName)
+                    </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
